@@ -1,0 +1,8 @@
+{
+  "name": "claude-ssh",
+  "description": "Execute commands on remote servers via SSH from Claude Code",
+  "version": "1.0.0",
+  "author": { "name": "fipauli" },
+  "repository": "https://github.com/fipauli/claude-ssh",
+  "license": "MIT"
+}
