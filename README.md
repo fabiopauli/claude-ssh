@@ -13,7 +13,11 @@ claude --plugin-dir /path/to/claude-ssh
 ### From GitHub
 
 ```bash
-/plugin install fipauli/claude-ssh
+# Step 1: Add the marketplace
+/plugin marketplace add fabiopauli/claude-ssh
+
+# Step 2: Install the plugin
+/plugin install claude-ssh@fabiopauli-claude-ssh
 ```
 
 ## Setup
@@ -33,9 +37,9 @@ The config is saved locally in `config.json` (gitignored) and reused for future 
 ### Via skill invocation
 
 ```
-/ssh uptime
-/ssh df -h
-/ssh systemctl status nginx
+/claude-ssh:ssh uptime
+/claude-ssh:ssh df -h
+/claude-ssh:ssh systemctl status nginx
 ```
 
 ### Natural language

@@ -1,0 +1,22 @@
+{
+  "name": "fabiopauli-claude-ssh",
+  "owner": {
+    "name": "fabiopauli"
+  },
+  "metadata": {
+    "description": "SSH remote command execution plugin for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "claude-ssh",
+      "source": "./",
+      "description": "Execute commands on remote servers via SSH from Claude Code",
+      "version": "1.0.0",
+      "author": {
+        "name": "fabiopauli"
+      },
+      "license": "MIT",
+      "keywords": ["ssh", "remote", "server", "vps"]
+    }
+  ]
+}

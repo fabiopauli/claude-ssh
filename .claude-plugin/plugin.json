@@ -2,7 +2,7 @@
   "name": "claude-ssh",
   "description": "Execute commands on remote servers via SSH from Claude Code",
   "version": "1.0.0",
-  "author": { "name": "fipauli" },
-  "repository": "https://github.com/fipauli/claude-ssh",
+  "author": { "name": "fabiopauli" },
+  "repository": "https://github.com/fabiopauli/claude-ssh",
   "license": "MIT"
 }
