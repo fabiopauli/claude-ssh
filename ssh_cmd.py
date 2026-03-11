@@ -77,26 +77,25 @@ def main():
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
     try:
+        connect_kwargs = {
+            "hostname": hostname,
+            "port": port,
+            "username": username,
+            "timeout": 10,
+        }
+
         if key_file:
-            client.connect(
-                hostname=hostname,
-                port=port,
-                username=username,
-                key_filename=key_file,
-                timeout=10,
-            )
-        else:
-            client.connect(
-                hostname=hostname,
-                port=port,
-                username=username,
-                password=password,
-                timeout=10,
-            )
+            connect_kwargs["key_filename"] = key_file
+        if password:
+            connect_kwargs["password"] = password
+
+        client.connect(**connect_kwargs)
 
         stdin, stdout, stderr = client.exec_command(command, timeout=300)
-        out = stdout.read().decode("utf-8")
-        err = stderr.read().decode("utf-8")
+        stdin.close()
+
+        out = stdout.read().decode("utf-8", errors="replace")
+        err = stderr.read().decode("utf-8", errors="replace")
         exit_code = stdout.channel.recv_exit_status()
 
         if out:

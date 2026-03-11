@@ -1,5 +1,20 @@
+# Credentials and config
 config.json
+*.json.bak
+.env
+.env.*
+
+# SSH keys
 keys/
+*.pem
+*.key
+id_rsa
+id_ed25519
+id_ecdsa
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
 .venv/
+venv/
